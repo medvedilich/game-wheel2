@@ -5,7 +5,7 @@
     <script>
        let elem = document.getElementById('btn');
        
-navigator.permissions.query({ name: 'motion sensors' }).then((result) => {
+navigator.permissions.query({ name: 'accelerometer' }).then((result) => {
  if (result.state === 'granted') {
    elem.value = "granted";
  } else if (result.state === 'prompt') {
