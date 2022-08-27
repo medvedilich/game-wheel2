@@ -4,7 +4,7 @@
     <input type="button" id="btn" value="Search" onclick="doSomething();"/>
     <script>
        let elem = document.getElementById('btn');
-       
+       let acl = new Accelerometer({frequency: 60});
 navigator.permissions.query({ name: 'accelerometer' }).then((result) => {
  if (result.state === 'granted') {
    elem.value = "granted";
@@ -15,6 +15,12 @@ navigator.permissions.query({ name: 'accelerometer' }).then((result) => {
  }
  
 });
+        
+        
+    acl.addEventListener('reading', () => {
+        elem.value = acl.x;
+    });
+    
         
     </script>
 </body>
