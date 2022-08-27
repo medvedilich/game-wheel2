@@ -20,7 +20,7 @@ navigator.permissions.query({ name: 'accelerometer' }).then((result) => {
     acl.addEventListener('reading', () => {
         elem.value = acl.x;
     });
-    
+    acl.start();
         
     </script>
 </body>
