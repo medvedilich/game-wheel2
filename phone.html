@@ -5,7 +5,7 @@
     <script>
        let elem = document.getElementById('btn');
        
-navigator.permissions.query({ name: 'geolocation' }).then((result) => {
+navigator.permissions.query({ name: 'motion sensors' }).then((result) => {
  if (result.state === 'granted') {
    elem.value = "granted";
  } else if (result.state === 'prompt') {
