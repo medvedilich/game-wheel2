@@ -1,19 +1,24 @@
 <html>
 <head></head>
 <body>
-    <input type="button" id="btnSearch" value="Search" onclick="doSomething();"/>
+    <input type="button" id="btn" value="Search" onclick="doSomething();"/>
     <script>
-    function doSomething(){
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(handle_geolocation_query);
-        } else {
-            alert("I'm sorry, but geolocation services are not supported by your browser.");
-        }
+       let elem = document.getElementById('btn');
+    navigator.permissions.query({name:'geolocation'}).then(function(result) {
+    if (result.state == 'granted') {
+      report(result.state);
+      geoBtn.style.display = 'none';
+    } else if (result.state == 'prompt') {
+      report(result.state);
+      navigator.geolocation.getCurrentPosition(revealPosition,positionDenied,geoSettings);
+    } else if (result.state == 'denied') {
+      report(result.state);
+      elem.value = "ti debil";
     }
-
-    function handle_geolocation_query(position) {
-        alert('Lat: ' + position.coords.latitude + ' ' + 'Lon: ' + position.coords.latitude);
+    result.onchange = function() {
+      report(result.state);
     }
+  });
     </script>
 </body>
 </html>  
