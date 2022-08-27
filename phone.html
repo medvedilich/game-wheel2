@@ -4,16 +4,18 @@
     <input type="button" id="btn" value="Search" onclick="doSomething();"/>
     <script>
        let elem = document.getElementById('btn');
-    navigator.permissions.query({name:'motion sensors'}).then(function(result) {
-    if (result.state == 'granted') {
-      elem.value = "granted";
-    } else if (result.state == 'prompt') {
-      elem.value = "prompt";
-    } else if (result.state == 'denied') {
-      elem.value = "ti debil";
-    }
-    
-  });
+       
+navigator.permissions.query({ name: 'geolocation' }).then((result) => {
+ if (result.state === 'granted') {
+   elem.value = "granted";
+ } else if (result.state === 'prompt') {
+   elem.value = "prompt";
+ } else {
+     elem.value = "ti debil";
+ }
+ 
+});
+        
     </script>
 </body>
 </html>  
