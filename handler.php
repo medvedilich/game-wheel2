@@ -2,10 +2,7 @@
 <head></head>
 <body>
     <h2>p<?php 
-for($i = 1; $i < 10; $i++)
-{
-echo "1";
-}
+echo "a";
 
  ?></h2>
 </body>
