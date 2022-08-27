@@ -11,7 +11,7 @@ navigator.permissions.query({ name: 'geolocation' }).then((result) => {
  } else if (result.state === 'prompt') {
    elem.value = "prompt";
  } else {
-     elem.value = "ti debil";
+     elem.value = result.state;
  }
  
 });
