@@ -4,13 +4,10 @@
         
         
     acl.addEventListener('reading', () => {
-        change(acl.x);
+        setTimeout(change, 100, acl.x);
     });
     acl.start();
     
-    function redir() {
-  document.location.replace("http://medved3q.beget.tech/sendData.php?x="+value);
-}
        
     function change(newval){
         value = newval;
