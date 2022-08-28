@@ -1,22 +1,22 @@
 <script>
        let value = null;
-       let acl = new Accelerometer({frequency: 30});
+       let acl = new Accelerometer({frequency: 60});
         
         
     acl.addEventListener('reading', () => {
-        //setTimeout(change, 100, acl.x);
-           wait(acl.x);
-           //change(acl.x);
+        value = acl.x;
     });
     acl.start();
-    
-       
-    function change(newval){
-           document.location.replace("http://medved3q.beget.tech/sendData.php?x="+newval);
-    }
-    function wait(newvalue){
-           setTimeout(change, 100, newvalue);
-    }
-     
-      
-</script>
+    function redir() {
+  document.location.replace("http://medved3q.beget.tech/sendData.php?x="+value);
+}
+       function redir2(){
+            if(value == null){
+                setTimeout(redir, 120);
+            else{
+                redir();
+            }
+                     
+       }
+    setTimeout(redir2, 60);
+    </script>
