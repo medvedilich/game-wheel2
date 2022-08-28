@@ -5,16 +5,6 @@
     <script>
        let elem = document.getElementById('btn');
        let acl = new Accelerometer({frequency: 60});
-navigator.permissions.query({ name: 'accelerometer' }).then((result) => {
- if (result.state === 'granted') {
-   elem.value = "granted";
- } else if (result.state === 'prompt') {
-   elem.value = "prompt";
- } else {
-     elem.value = result.state;
- }
- 
-});
         
         
     acl.addEventListener('reading', () => {
