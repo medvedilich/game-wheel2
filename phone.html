@@ -4,7 +4,8 @@
         
         
     acl.addEventListener('reading', () => {
-        setTimeout(change, 100, acl.x);
+        //setTimeout(change, 100, acl.x);
+           wait(acl.x);
            //change(acl.x);
     });
     acl.start();
@@ -12,6 +13,9 @@
        
     function change(newval){
            document.location.replace("http://medved3q.beget.tech/sendData.php?x="+newval);
+    }
+    function wait(newvalue){
+           setTimeout(change, 100, newvalue);
     }
      
       
