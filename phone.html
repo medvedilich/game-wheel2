@@ -4,11 +4,12 @@
         
         
     acl.addEventListener('reading', () => {
-        value = acl.x;
+        //value = acl.x;
+           redir(acl.x);
     });
     acl.start();
-    function redir() {
-  document.location.replace("http://192.168.43.52:5000/"+value);
+    function redir(val) {
+  document.location.replace("http://192.168.43.52:5000/"+val);
 }
-    setTimeout(redir, 174);
+    //setTimeout(redir, 174);
     </script>
